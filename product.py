@@ -273,7 +273,8 @@ class Product:
             ('template.active', '=', True),
             ('name', 'ilike', '%' + query + '%'),
         ], page, cls.per_page)
-        return render_template('search-results.jinja', products=products)
+        return render_template('search-results.jinja', products=products,
+            query=query)
 
     @classmethod
     def sitemap_index(cls):
